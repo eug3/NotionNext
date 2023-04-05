@@ -7,7 +7,7 @@ const InfoCard = (props) => {
   const { siteInfo } = props
   return <>
     <div className='flex flex-col items-center justify-center '>
-        <div className='hover:rotate-45 hover:scale-125 transform duration-200 cursor-pointer' onClick={ () => { Router.push('/') }}>
+        <div className='transform duration-200 cursor-pointer' onClick={ () => { Router.push('/') }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={siteInfo?.icon} className='rounded-full' width={120} alt={BLOG.AUTHOR}/>
         </div>

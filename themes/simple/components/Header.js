@@ -19,7 +19,7 @@ export const Header = (props) => {
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     {/* <img className='max-h-48 hover:opacity-60 duration-200 transition-all cursor-pointer' src={CONFIG_SIMPLE.LOGO_IMG}/> */}
                     <div className='flex space-x-6'>
-                        <div className='hover:rotate-45 hover:scale-125 transform duration-200 cursor-pointer'>
+                        <div className='transform duration-200 cursor-pointer'>
                             {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img src={avatar} className='rounded-full' width={160} alt={BLOG.AUTHOR} />
                         </div>
