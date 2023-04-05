@@ -7,7 +7,7 @@ const CONFIG_NEXT = {
 
   POST_LIST_COVER: false, // 文章列表显示封面图
   POST_LIST_PREVIEW: true, // 显示文章预览
-  POST_LIST_SUMMARY: false, // 显示用户自定义摘要，有预览时优先只展示预览
+  POST_LIST_SUMMARY: true, // 显示用户自定义摘要，有预览时优先只展示预览
 
   POST_HEADER_IMAGE_VISIBLE: false, // 文章详情页是否显示封面图
 
