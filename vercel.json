@@ -1,5 +1,8 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
-  "headers": []
+  "headers": [],
+  "build": {
+    "installCommand": "npm install --legacy-peer-deps"
+  }
 }
