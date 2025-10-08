@@ -1,6 +1,4 @@
 {
-  "buildCommand": "pnpm build",
-  "installCommand": "npm install -g pnpm@9.1.4 && pnpm install",
   "cleanUrls": true,
   "trailingSlash": false,
   "headers": []
