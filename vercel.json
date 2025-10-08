@@ -1,6 +1,6 @@
 {
   "buildCommand": "pnpm build",
-  "installCommand": "corepack enable && corepack prepare pnpm@8.15.0 --activate && pnpm install",
+  "installCommand": "npm install -g pnpm@8.15.0 && pnpm install",
   "cleanUrls": true,
   "trailingSlash": false,
   "headers": []
