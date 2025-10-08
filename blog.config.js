@@ -232,6 +232,9 @@ const BLOG = {
 
   // 开发相关
   NOTION_ACCESS_TOKEN: process.env.NOTION_ACCESS_TOKEN || '', // Useful if you prefer not to make your database public
+  NOTION_TOKEN_V2: process.env.NOTION_TOKEN_V2 || '', // Notion token v2 用于访问私有数据库
+  NOTION_ACTIVE_USER: process.env.NOTION_ACTIVE_USER || '', // Notion active user
+  NOTION_API_BASE_URL: process.env.NOTION_API_BASE_URL || '', // Notion API base URL, 留空则使用默认值 https://www.notion.so/api/v3
   DEBUG: process.env.NEXT_PUBLIC_DEBUG || false, // 是否显示调试按钮
   ENABLE_CACHE: process.env.ENABLE_CACHE || false, // 开启缓存会将Notion数据缓存在内存中，通常在开发调试中使用，正式部署开启此功能意义不大。
   isProd: process.env.VERCEL_ENV === 'production', // distinguish between development and production environment (ref: https://vercel.com/docs/environment-variables#system-environment-variables)  isProd: process.env.VERCEL_ENV === 'production' // distinguish between development and production environment (ref: https://vercel.com/docs/environment-variables#system-environment-variables)
