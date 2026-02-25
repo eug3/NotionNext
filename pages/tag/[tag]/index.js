@@ -67,9 +67,11 @@ export async function getStaticPaths() {
   const tagNames = getTagNames(tagOptions)
 
   return {
-    paths: tagNames ? Object.keys(tagNames).map(index => ({
-      params: { tag: tagNames[index] }
-    })) : [],
+    paths: tagNames
+      ? Object.keys(tagNames).map(index => ({
+        params: { tag: tagNames[index] }
+      }))
+      : [],
     fallback: true
   }
 }

@@ -27,9 +27,11 @@ export async function getStaticPaths() {
   const totalPages = Math.ceil((postCount || 0) / BLOG.POSTS_PER_PAGE)
   return {
     // remove first page, we 're not gonna handle that.
-    paths: totalPages > 1 ? Array.from({ length: totalPages - 1 }, (_, i) => ({
-      params: { page: '' + (i + 2) }
-    })) : [],
+    paths: totalPages > 1
+      ? Array.from({ length: totalPages - 1 }, (_, i) => ({
+        params: { page: '' + (i + 2) }
+      }))
+      : [],
     fallback: true
   }
 }
