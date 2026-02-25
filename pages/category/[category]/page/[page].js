@@ -56,18 +56,20 @@ export async function getStaticPaths() {
   const { categoryOptions, allPages } = await getGlobalNotionData({ from })
   const paths = []
 
-  categoryOptions?.forEach(category => {
-    // 过滤状态类型
-    const categoryPosts = allPages.filter(page => page.type === 'Post' && page.status === 'Published').filter(post => post && post.category && post.category.includes(category.name))
-    // 处理文章页数
-    const postCount = categoryPosts.length
-    const totalPages = Math.ceil(postCount / BLOG.POSTS_PER_PAGE)
-    if (totalPages > 1) {
-      for (let i = 1; i <= totalPages; i++) {
-        paths.push({ params: { category: category.name, page: '' + i } })
+  if (Array.isArray(categoryOptions) && Array.isArray(allPages)) {
+    categoryOptions.forEach(category => {
+      // 过滤状态类型
+      const categoryPosts = allPages.filter(page => page.type === 'Post' && page.status === 'Published').filter(post => post && post.category && post.category.includes(category.name))
+      // 处理文章页数
+      const postCount = categoryPosts.length
+      const totalPages = Math.ceil(postCount / BLOG.POSTS_PER_PAGE)
+      if (totalPages > 1) {
+        for (let i = 1; i <= totalPages; i++) {
+          paths.push({ params: { category: category.name, page: '' + i } })
+        }
       }
-    }
-  })
+    })
+  }
 
   return {
     paths,

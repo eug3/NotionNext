@@ -24,12 +24,12 @@ const Page = props => {
 export async function getStaticPaths() {
   const from = 'page-paths'
   const { postCount } = await getGlobalNotionData({ from })
-  const totalPages = Math.ceil(postCount / BLOG.POSTS_PER_PAGE)
+  const totalPages = Math.ceil((postCount || 0) / BLOG.POSTS_PER_PAGE)
   return {
     // remove first page, we 're not gonna handle that.
-    paths: Array.from({ length: totalPages - 1 }, (_, i) => ({
+    paths: totalPages > 1 ? Array.from({ length: totalPages - 1 }, (_, i) => ({
       params: { page: '' + (i + 2) }
-    })),
+    })) : [],
     fallback: true
   }
 }
