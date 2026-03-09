@@ -54,6 +54,7 @@ export async function getStaticProps({ params: { tag } }) {
  * @param tags
  */
 function getTagNames(tags) {
+  if (!Array.isArray(tags)) return []
   const tagNames = []
   tags.forEach(tag => {
     tagNames.push(tag.name)
