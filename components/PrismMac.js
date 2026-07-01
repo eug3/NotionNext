@@ -62,8 +62,13 @@ const renderMermaid = async() => {
       }
     }
     if (needLoad) {
-      const asyncMermaid = await import('mermaid')
-      asyncMermaid.default.contentLoaded()
+      const mermaidModule = await import('mermaid')
+      const mermaid = mermaidModule.default || mermaidModule
+      if (typeof mermaid.run === 'function') {
+        mermaid.run({ nodes: Array.from(document.querySelectorAll('.mermaid')) })
+      } else if (typeof mermaid.contentLoaded === 'function') {
+        mermaid.contentLoaded()
+      }
     }
   }
 }
